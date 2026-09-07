@@ -1,1 +1,1 @@
-# g247-labs-javichicoalonso
+# g247-labs-javichicoalonsoPrueba desde la terminal
