@@ -1,0 +1,264 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background-color: #fdfdfc;
+}
+
+/* HEADER*/
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding:2rem;
+  background-color: #1a1f6c;
+  color: #ffffff;
+  border-bottom: 4px solid #ff5700;
+}
+header h1 {
+  margin:0;
+}
+header p {
+  margin: 0;
+}
+
+/*NAV*/
+nav {
+  display: flex;
+  justify-content:center;
+  gap: 1.5rem;
+  align-items: center;
+  padding:0.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #7e7c7c;
+}
+nav a {
+  color: #1a1f6c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff5700;
+}
+
+
+
+/* ORGANIZACION MAIN */
+/* ORGANIZACION MAIN */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  grid-template-areas:
+    "intro    ficha"
+    "plan     foto"
+    "admision foto"
+    "noticias foto";
+  align-items: start;
+  gap: 2rem;
+}
+
+#introduccion     { grid-area: intro; }
+#resumen-plan     { grid-area: plan; }
+#resumen-admision { grid-area: admision; }
+#resumen-noticias { grid-area: noticias; }
+main > aside      { grid-area: ficha; }
+#imagen-grado     { grid-area: foto; }
+
+/* La sección del plan vuelve a ser solo texto */
+#resumen-plan h2,
+#resumen-plan p,
+#resumen-plan ul {
+  margin: 0 0 0.8rem;
+}
+
+/* ASIDE */
+aside {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #d6d1c4;
+  border-top: 4px solid #0796a3;
+  border-radius: 8px;
+}
+
+aside h2 { margin-top: 0; }
+aside ul { margin-bottom: 0; }
+
+/* ASIDE */
+aside {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #d6d1c4;
+  border-top: 4px solid #0796a3;
+  border-radius: 8px;
+}
+
+aside h2 {
+  margin-top: 0;
+}
+
+/* TARJETAS */
+article {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #d6d1c4;
+  border-radius: 8px;
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+
+/* LISTAS Y SECCIONES DE CONTENIDO */
+section ul,
+section ol {
+  padding-left: 1rem;
+}
+
+h2 {
+  color: #1a1f6c;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  color:#ff5700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* IMÁGENES */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+#imagen-grado img {
+  width: 100%;
+}
+
+/* CURSOS EN MATRIZ */
+.cursos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.curso {
+  padding: 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid #d6d1c4;
+  border-top: 4px solid #0796a3;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+.curso h3 {
+  margin-top: 0;
+  color: #0796a3;
+}
+
+.curso ul {
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+
+/* FORMULARIO DE ACCESO */
+form {
+  max-width: 360px;
+  margin:0 auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #d6d1c4;
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #d6d1c4;
+  border-radius: 8px;
+}
+
+form input:focus {
+  border: 2px solid #0796a3;
+}
+
+form button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #ff5700;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #1a1f6c;
+}
+
+/* FOOTER*/
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding:1rem;
+  margin-top: 3rem;
+  background-color: #1a1f6c;
+  color: #f8f7f7;
+  border-top: 4px solid #ff5700;
+  text-align: center;
+}
+footer p {
+  margin: 0;
+}
+footer a {
+  color: #ff5700;
+}
+
+/* BREAKPOINT RESPONSIVE */
+@media (max-width: 768px) {
+
+  .portada main {
+    grid-template-columns: 1fr;
+  }
+
+  .portada main > aside {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .portada #imagen-grado {
+    grid-column: 1;
+  }
+
+  .cursos {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+}
